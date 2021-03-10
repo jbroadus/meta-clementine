@@ -1,7 +1,11 @@
 SUMMARY = "Test image for meta-clementine"
 
-IMAGE_INSTALL = "clementine-player"
-
 LICENSE = "MIT"
 
-inherit core-image
+require recipes-core/images/core-image-minimal-xfce.bb
+
+export IMAGE_BASENAME = "clementine-image"
+
+IMAGE_INSTALL += " \
+    clementine-player \
+"
